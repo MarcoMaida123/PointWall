@@ -1,0 +1,363 @@
+/*-------HEADER-------*/
+
+header{
+    width: 100%;
+    height: 15%;
+}
+.general{
+    background-image: linear-gradient(to bottom,var(--negrotransparente));
+    padding: 2vh 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.general span{
+    font-size:var(--headertitulo);
+}
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-top: black solid .5vh;
+    border-bottom: black solid .5vh;
+    background-color: black;
+    overflow: hidden;
+    z-index: -1;
+}
+.menu a{
+    font-size:var(--headerlink);
+}
+
+/*Iconos*/
+.borgermenu{
+    display: none;
+}
+
+.fa-angle-right{
+    display: none;
+}
+
+/*---Submenu---*/
+
+/*Submenu settings*/
+.submenu{
+    padding: .1em .5em;
+    
+    position: relative;
+    z-index: 1;
+    user-select: none;
+    overflow: hidden;
+}
+.submenu a{
+    display: block;
+    padding: 0 .3em;
+    color: white;
+}
+.submenu::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: .2vh;
+    background-color: white;
+    transform: scaleX(0);
+    z-index: -1;
+}
+
+/*Submenu animacion*/
+@keyframes hover-submenu-after{
+    0%{
+        transform: scaleX(0);
+    }
+    50%{
+        transform: scaleX(1);
+        transform: scaleY(2);
+    }
+    100%{
+        transform: scaleY(var(--valoranimacion));
+    }
+}
+.submenu:hover::after{
+    animation-name: hover-submenu-after;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+
+/*---Sub animacion colores---*/
+
+/*Rojo*/
+@keyframes hover-submenu-color-rojo{
+    0%{
+        color: white;
+    }
+    50%{
+        color: var(--rojo);
+    }
+    100%{
+        color: black;
+    }
+}
+.rojo:hover a{
+    animation-name: hover-submenu-color-rojo;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+.rojo:hover::after{
+    background-color: var(--rojo);
+}
+
+/*Naranja*/
+@keyframes hover-submenu-color-naranja{
+    0%{
+        color: white;
+    }
+    50%{
+        color: var(--naranja);
+    }
+    100%{
+        color: black;
+    }
+}
+.naranja:hover a{
+    animation-name: hover-submenu-color-naranja;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+.naranja:hover::after{
+    background-color: var(--naranja);
+}
+
+/*Amarillo*/
+@keyframes hover-submenu-color-amarillo{
+    0%{
+        color: white;
+    }
+    50%{
+        color: var(--amarillo);
+    }
+    100%{
+        color: black;
+    }
+}
+.amarillo:hover a{
+    animation-name: hover-submenu-color-amarillo;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+.amarillo:hover::after{
+    background-color: var(--amarillo);
+}
+
+/*Verde*/
+@keyframes hover-submenu-color-verde{
+    0%{
+        color: white;
+    }
+    50%{
+        color: var(--verde);
+    }
+    100%{
+        color: black;
+    }
+}
+.verde:hover a{
+    animation-name: hover-submenu-color-verde;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+.verde:hover::after{
+    background-color: var(--verde);
+}
+
+/*Azul*/
+@keyframes hover-submenu-color-azul{
+    0%{
+        color: white;
+    }
+    50%{
+        color: var(--azul);
+    }
+    100%{
+        color: black;
+    }
+}
+.azul:hover a{
+    animation-name: hover-submenu-color-azul;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+.azul:hover::after{
+    background-color: var(--azul);
+}
+
+/*Rosa*/
+@keyframes hover-submenu-color-rosa{
+    0%{
+        color: white;
+    }
+    50%{
+        color: var(--rosa);
+    }
+    100%{
+        color: black;
+    }
+}
+.rosa:hover a{
+    animation-name: hover-submenu-color-rosa;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+}
+.rosa:hover::after{
+    background-color: var(--rosa);
+}
+
+/*---RESPONSIVE DESIGN---*/
+@media screen and (max-width: 920px){
+    :root{
+        /*Valor animacion*/
+        --valoranimacion: 60;
+    }
+    .general span{
+        font-size: calc(var(--headertitulo)/1.75);
+    }
+    .menu{
+        display: none;
+        flex-direction: column;
+    }
+    .borgermenu{
+        display: block;
+        cursor: pointer;
+    }
+    
+    .fa-angle-right{
+        display: block;
+        transition: transform 500ms;
+    }
+    .submenu a{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .2em .3em;
+        overflow: hidden;
+    }
+    .submenu:hover{
+        animation-duration: 1200ms;
+    }
+    .submenu:hover .fa-angle-right{
+        transform: rotate(180deg);
+    }
+    
+    .menu.active{
+        display: flex;
+    }
+}
+
+
+
+/*-------FOOTER-------*/
+
+footer{
+    width: 100%;
+    bottom: 0;
+    font-size:var(--footergrande);
+    padding-top: 1em;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    
+    border-top: solid var(--negrotransparente) .02em;
+}
+.footer-container{
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50em;*/
+
+    display: grid;
+    grid-template-columns: auto 75vw;
+    justify-content: space-around;
+    align-items: start;
+
+    padding-bottom: 1em;
+}
+.footer-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-logo img{
+    width: 5em;
+    height: 5em;
+    padding: 0.5em;
+    border-radius: 50%;
+    border: black solid 1px;
+}
+
+.paginas-link{
+    min-width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 1em;
+    width: 100%;
+}
+.paginas-link a:hover{
+    text-decoration: underline;
+}
+
+.footer-contacto-info{
+    display: flex;
+    flex-direction: column;
+    
+    font-size:var(--footermessi);
+}
+.creditos{
+    display: inline-block;
+    text-align: center;
+    font-size:var(--footermessi);
+    letter-spacing: .1em;
+    padding-bottom: 1em;
+    margin: 0;
+}
+
+@media screen and (max-width: 1300px){
+    footer{
+        font-size:var(--footermediano);
+    }
+    
+    .footer-container{
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+        align-items: start;
+    
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .paginas-link{
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 1em;
+        width: 100%;
+    }
+
+    .creditos{
+        font-size:var(--footermessi);
+        padding-bottom: 1em;
+        margin: 1em;
+    }
+}
+@media screen and (max-width: 400px) {
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .paginas-link{
+        text-align: center;
+    }
+}

@@ -1,0 +1,197 @@
+/*-------GENERAL-------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    /*---Paleta de colores---*/
+    
+    --rojo: hsl(353, 83%, 77%);
+    --naranja: hsl(26, 91%, 75%);
+    --amarillo: hsl(59, 78%, 77%);
+    --verde: hsl(82, 52%, 80%);
+    --azul: hsl(219, 52%, 83%);
+    --rosa: hsl(323, 50%, 81%);
+    --negrotransparente:hsla(0, 0%, 0%, 0.4);
+
+    /*---Fuentes---*/
+    --tamaño-fuente:1.25vh;
+    /*Header*/
+    --headertitulo:calc(var(--tamaño-fuente)*8);
+    --headerlink:calc(var(--tamaño-fuente)*2.25);
+    /*Main*/
+    --maintitulos:calc(var(--tamaño-fuente)*9);
+    --mainparrafos:calc(var(--tamaño-fuente)*2.25);
+    /*Footer*/
+    --footermediano:calc(var(--tamaño-fuente)*1.75);
+    --footermessi:calc(var(--tamaño-fuente)*1.25);
+    /*Cards*/
+    --fontcardtitle:calc(var(--tamaño-fuente)*2.5);
+    --fontcardp:calc(var(--tamaño-fuente)*1.5);
+
+    /*---Misc---*/
+    /*Valor animacion*/
+    --valoranimacion: 40;
+
+    /*Columna layout*/
+    --columnasize: 400px;
+    --columnagap: 2em;
+}
+@media screen and (max-width: 1300px){
+    :root{
+        --tamaño-fuente: .6em;
+    }
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration-line: none;
+}
+button{
+    border: none;
+}
+
+/*---------MAIN---------*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    max-width: 100%;
+}
+
+/*Texto*/
+.descripcion{
+    margin: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.descripcion h2{
+    margin: 0;
+    font-size: var(--maintitulos);
+}
+.descripcion p{
+    width: 45ch;
+    font-size: var(--mainparrafos);
+    text-align: center;
+}
+.descripcion a{
+    color: var(--naranja);
+}
+.descripcion a:hover{
+    text-decoration-line: underline;
+}
+
+@media screen and (max-width: 920px) {
+    .descripcion p{
+        width: 80vw;
+    }
+}
+
+/*Navegador*/
+.navegador{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-bar{
+    width: 100%;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+}
+.search-bar input{
+    background: transparent;   
+    flex: 1;
+    border: 1;
+    border-radius: 60px;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+}
+a{
+    color: black;    
+}
+
+/*Mural fotos*/
+.cards-container{
+    margin: 10em 5em;
+    columns: 5 var(--columnasize);
+    column-gap: var(--columnagap);
+
+}
+.card{
+    position: relative;
+    margin-bottom: var(--columnagap);
+    width: fit-content;
+
+    border-radius: 2.5em; 
+    
+    object-fit: cover;
+}
+.card img{
+    z-index: -1;
+    width: var(--columnasize);
+    border-radius: 2.5em;
+    box-shadow: 0 .5em 2em -.5em;
+    
+    transition: filter 500ms;
+}
+.card-info{
+    position: absolute;
+
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2em;
+
+    color: white;
+
+    z-index: 1;
+
+    opacity: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: opacity 500ms, color 500ms;
+}
+.text-info{
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    font-size: var(--fontcardtitle);
+    font-weight: 800;
+}
+.artista{
+    font-size: var(--fontcardp);
+}
+.card:hover img{
+    filter: blur(.5em) grayscale(1);
+}
+.card:hover .card-info{
+    opacity: 1;
+}
+
+.card:hover .mural{
+    color: var(--rojo);
+}
+.card:hover .graffiti{
+    color: var(--azul);
+}
+
+/*---------FOOTER---------*/
+footer{
+    background-color: var(--naranja);
+}

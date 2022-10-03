@@ -1,0 +1,103 @@
+/*-------GENERAL-------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    /*---Paleta de colores---*/
+    
+    --rojo: hsl(353, 83%, 77%);
+    --naranja: hsl(26, 91%, 75%);
+    --amarillo: hsl(59, 78%, 77%);
+    --verde: hsl(82, 52%, 80%);
+    --azul: hsl(219, 52%, 83%);
+    --rosa: hsl(323, 50%, 81%);
+    --negrotransparente:hsla(0, 0%, 0%, 0.4);
+
+    /*---Fuentes---*/
+    --tamaño-fuente: 1.25vh;
+    /*Header*/
+    --headertitulo:calc(var(--tamaño-fuente)*8);
+    --headerlink:calc(var(--tamaño-fuente)*2.25);
+    /*Main*/
+    --maintitulos:calc(var(--tamaño-fuente)*9);
+    --mainparrafos:calc(var(--tamaño-fuente)*2.5);
+    /*Footer*/
+    --footermediano:calc(var(--tamaño-fuente)*1.75);
+    --footermessi:calc(var(--tamaño-fuente)*1.25);
+
+    /*Valor animacion*/
+    --valoranimacion: 40;
+}
+@media screen and (max-width: 1300px){
+    :root{
+        --tamaño-fuente: .6em;
+    }
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration-line: none;
+    color: black;
+}
+button{
+    border: none;
+}
+h1{
+    font-size: var(--maintitulos);
+}
+h2{
+    font-size: var(--mainparrafos);
+}
+
+
+
+/* -- MAIN -- */
+.card-container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(5, auto);
+    place-items: center;
+
+    padding-bottom: 2em;
+    margin-bottom: 1em;
+}
+
+.card {
+    width: 70vw;
+    padding-bottom: 1.5em;
+    margin-bottom: 2.9em;
+}
+
+.idea {
+    border-bottom: 0.2em solid var(--rojo);
+}
+
+.planificacion {
+    border-bottom: 0.2em solid var(--naranja);
+}
+
+.objetivos {
+    border-bottom: 0.2em solid var(--amarillo);
+}
+
+.finalidad {
+    border-bottom: 0.2em solid var(--verde);
+}
+
+@media screen and (max-width: 1300px) {
+    h1{
+        font-size: calc(var(--maintitulos) / 2 );
+        text-align: center;
+    }
+}
+
+
+
+/* -- FOOTER -- */
+footer{
+    background-color: var(--verde);
+}

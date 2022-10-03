@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    /*---Paleta de colores---*/
+    
+    --rojo: hsl(353, 83%, 77%);
+    --naranja: hsl(26, 91%, 75%);
+    --amarillo: hsl(59, 78%, 77%);
+    --verde: hsl(82, 52%, 80%);
+    --azul: hsl(219, 52%, 83%);
+    --rosa: hsl(323, 50%, 81%);
+    --negrotransparente:hsla(0, 0%, 0%, 0.4);
+
+    /*---Fuentes---*/
+    --tamaño-fuente: 1.25vh;
+    /*Header*/
+    --headertitulo:calc(var(--tamaño-fuente)*8);
+    --headerlink:calc(var(--tamaño-fuente)*2.25);
+    /*Main*/
+    --maintitulos:calc(var(--tamaño-fuente)*9);
+    --mainparrafos:calc(var(--tamaño-fuente)*2.5);
+    /*Footer*/
+    --footermediano:calc(var(--tamaño-fuente)*1.75);
+    --footermessi:calc(var(--tamaño-fuente)*1.25);
+
+    /*Valor animacion*/
+    --valoranimacion: 40;
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+a{
+    text-decoration-line: none;
+    color: black;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: var(--maintitulos);
+    text-align: center;
+}
+
+h3{
+    font-size: 40px;
+    /* text-align: center; */
+}
+
+.integrantes{
+    display: flex;
+    justify-content: space-around;
+    margin: 20vh 0;
+}
+.colabs{
+    display: flex;
+    justify-content: space-around;
+    margin: 20vh 0;
+}
+
+
+.nosotros{
+    text-align: center;
+    text-decoration: underline green;
+}
+
+.card img{
+    border-radius: 100%;
+    width: 400px;
+    border: 5px black solid;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.563);
+}
+.card h3{
+    font-size: var(--headertitulo);
+    margin: 0;
+}
+
+.card h5{
+    font-size: 15px;
+    margin: 0;
+}
+
+.cardcolab img{
+    border-radius: 100%;
+    width: 200px;
+    border: 5px black solid;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.563);
+}
+
+h2{
+    font-size: 40px;
+    text-align: center;
+}
+.cardcolab h3{
+    padding-top: 20px;
+    font-size: 25px;
+    margin: 0;
+}
+.cardcolab h5{
+    font-size: 15px;
+    margin: 0;
+}
+
+main a{
+    font-size: calc( var(--mainparrafos) - .5vh);
+}
+
+main a:hover{
+    text-decoration:underline;
+}
+
+main h5:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1300px){
+    :root{
+        --tamaño-fuente: .6em;
+    }
+    .integrantes{
+        flex-direction: column;
+        align-items: center;
+        gap: 15vh;
+    }
+}
+
+footer{
+    background-color: var(--azul);
+}

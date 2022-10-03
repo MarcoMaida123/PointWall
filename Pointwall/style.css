@@ -1,0 +1,432 @@
+/*-------GENERAL-------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    /*---Paleta de colores---*/
+    
+    --rojo: hsl(353, 83%, 77%);
+    --naranja: hsl(26, 91%, 75%);
+    --amarillo: hsl(59, 78%, 77%);
+    --verde: hsl(82, 52%, 80%);
+    --azul: hsl(219, 52%, 83%);
+    --rosa: hsl(323, 50%, 81%);
+    --negrotransparente:hsla(0, 0%, 0%, 0.4);
+
+    /*---Fuentes---*/
+    --tamaño-fuente:1.25vh;
+    /*Header*/
+    --headertitulo:calc(var(--tamaño-fuente)*8);
+    --headerlink:calc(var(--tamaño-fuente)*2.25);
+    /*Main*/
+    --maintitulos:calc(var(--tamaño-fuente)*9);
+    --mainparrafos:calc(var(--tamaño-fuente)*2.5);
+    /*Footer*/
+    --footermediano:calc(var(--tamaño-fuente)*1.75);
+    --footermessi:calc(var(--tamaño-fuente)*1.25);
+
+    /*Valor animacion*/
+    --valoranimacion: 40;
+}
+@media screen and (max-width: 1300px){
+    :root{
+        --tamaño-fuente: .6em;
+    }
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration-line: none;
+    color: black;
+}
+button{
+    border: none;
+}
+
+/*-------MAIN-------*/
+main{
+    max-width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+/*descripcion*/
+.descripcion{
+    margin: 5em 0;
+    padding: .5em;
+    font-size:var(--mainparrafos);
+    border-radius: .5em;
+    box-shadow: 0px 0px 2em -.5em var(negrotransparente);
+    text-align: center;
+}
+.descripcion-texto h2{
+    margin: 0;
+    display: inline-block;
+    font-size:var(--maintitulos);
+}
+.descripcion-texto p{
+    max-width: 60ch;
+    margin: 0;
+    padding: .5em 2em;
+}
+.oracion{
+    font-size: calc( var(--mainparrafos) * 1.25 );
+}
+
+@media screen and (max-width: 775px) {
+    .descripcion{
+        width: 90vw;
+    }
+    .descripcion-texto h2{
+        font-size: calc( var(--maintitulos) / 2);
+    }
+}
+
+/*Multi-text*/
+.multi-text{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.multi-text::after{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    animation: multitext-after 16s linear 0s infinite normal;
+}
+.text1{
+    position: absolute;
+    color: var(--rojo);
+    animation: multitext1 16s linear 0s infinite normal;
+}
+.text2{
+    color: var(--azul);
+    animation: multitext2 16s linear 0s infinite normal;
+}
+
+/*Multi-text animation very long text yea just hide it bro :P*/
+@keyframes multitext-after {
+    0%{
+        transform: scaleX(0);
+        background-color: var(--rojo);
+    }
+
+    /*Fase 1*/
+    18.75%{
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+    21.275%{
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    21.875%{
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    25%{
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+
+    25%{
+        transform: scaleX(0);
+        background-color: var(--azul);
+    }
+    /*Fase 2*/
+    43.74%{
+        transform: scaleX(0);
+    }
+
+    43.75%{
+        transform:  scaleY(0);
+        transform-origin: top;
+    }
+    46.275%{
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+    46.875%{
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+    50%{
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+
+    50%{
+        transform: scaleY(0);
+        background-color: var(--rojo);
+    }
+    /*Fase 3*/
+    68.74%{
+        transform: scaleY(0);
+    }
+
+    68.75%{
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+    71.275%{
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    71.875%{
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+    75%{
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    75%{
+        transform: scaleX(0);
+        background-color: var(--azul);
+    }
+    /*Fase 4*/
+    93.74%{
+        transform: scaleX(0);
+        background-color: var(--rojo);
+    }
+
+    93.75%{
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+    96.275%{
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+    96.875%{
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+    100%{
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+    100%{
+        background-color: var(--rojo);
+    }
+}
+
+/*Multi-texts*/
+@keyframes multitext1 {
+    0%{
+        opacity: 1;
+    }
+
+    /*Fase 1*/
+    21.275%{
+        opacity: 1;
+    }
+    21.875%{
+        opacity: 0;
+    }
+
+    /*Fase 2*/
+    46.275%{
+        opacity: 0;
+    }
+    46.875%{
+        opacity: 1;
+    }
+
+    /*Fase 3*/
+    71.275%{
+        opacity: 1;
+    }
+    71.875%{
+        opacity: 0;
+    }
+
+    /*Fase 4*/
+    96.275%{
+        opacity: 0;
+    }
+    96.875%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes multitext2 {
+    0%{
+        opacity: 0;
+    }
+
+    /*Fase 1*/
+    21.275%{
+        opacity: 0;
+    }
+    21.875%{
+        opacity: 1;
+    }
+
+    /*Fase 2*/
+    46.275%{
+        opacity: 1;
+    }
+    46.875%{
+        opacity: 0;
+    }
+
+    /*Fase 3*/
+    71.275%{
+        opacity: 0;
+    }
+    71.875%{
+        opacity: 1;
+    }
+    
+    /*Fase 4*/
+    96.275%{
+        opacity: 1;
+    }
+    96.875%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+/*Mapa*/
+.mapa{
+    width: 35vw;
+    height: 35vw;
+    background-color: var(--negrotransparente);
+    border: solid var(--negrotransparente) .25em;
+    margin: 2em;
+}
+.map{
+    height: 500px;
+    width: 500px;
+}
+
+
+
+/*Formulario*/
+.formulario{
+    font-size:var(--mainparrafos);
+    text-align: center;
+    padding: .5em;
+    padding-top: 0em;
+    margin: 5em 0;
+
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    place-items: center;
+}
+/*
+.formulario:hover{
+    border: solid var(--rosa) .05em;
+}
+*/
+.formulario-link{
+    border: var(--azul) solid 2px;
+    width: 250px;
+    padding: .5em;
+    margin: 1em;
+    font-size: var(--mainparrafos);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+.formulario-link a{
+    color: var(--azul);
+    transition: color 500ms;
+}
+.formulario-link::after{
+    content: '';
+    background-color: var(--azul);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 500ms;
+}
+.formulario-link:hover a{
+    color: black;
+}
+.formulario-link:hover::after{
+    transform: scaleX(1);
+    transform-origin:left;
+    transition: transform 500ms;
+}
+
+
+
+/*cafecito*/
+.cafecito{
+    font-size: var(--mainparrafos);
+    text-align: center;
+    padding: 1em;
+    padding-top: 0em;
+    margin-bottom: 1.5em;
+
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+/*
+.cafecito:hover{
+    border: solid var(--rosa) .05em;
+}
+*/
+.cafecito-descripcion{
+    padding-bottom: 2em;
+}
+
+.cafecito-iconos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-self: center;
+
+    width: 50%;
+}
+
+
+/*
+
+Pregunta quien sería el ""dueño"" de la cuenta de cafecito??(pregunta de forne)
+.cafecito h2{
+    color: white;
+}
+.cafecito a{
+    margin-inline: 40px;
+    margin-bottom: 40px;
+}
+*/
+
+/*instagram*/
+.instagram{
+    text-align: center;
+    color: azure;
+
+    margin-bottom: 2em;
+}
+
+
+/*-------FOOTER-------*/
+footer{
+    background-color: var(--rojo);
+}
+

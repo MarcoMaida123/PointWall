@@ -1,0 +1,102 @@
+/*-------GENERAL-------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    /*---Paleta de colores---*/
+    
+    --rojo: hsl(353, 83%, 77%);
+    --naranja: hsl(26, 91%, 75%);
+    --amarillo: hsl(59, 78%, 77%);
+    --verde: hsl(82, 52%, 80%);
+    --azul: hsl(219, 52%, 83%);
+    --rosa: hsl(323, 50%, 81%);
+    --negrotransparente:hsla(0, 0%, 0%, 0.4);
+
+    /*---Fuentes---*/
+    --tamaño-fuente:1.25vh;
+    /*Header*/
+    --headertitulo:calc(var(--tamaño-fuente)*8);
+    --headerlink:calc(var(--tamaño-fuente)*2.25);
+    /*Main*/
+    --maintitulos:calc(var(--tamaño-fuente)*9);
+    --mainparrafos:calc(var(--tamaño-fuente)*2.25);
+    /*Footer*/
+    --footermediano:calc(var(--tamaño-fuente)*1.75);
+    --footermessi:calc(var(--tamaño-fuente)*1.25);
+    /*Cards*/
+    --fontcardtitle:calc(var(--tamaño-fuente)*2.5);
+    --fontcardp:calc(var(--tamaño-fuente)*1.5);
+
+    /*---Misc---*/
+    /*Valor animacion*/
+    --valoranimacion: 40;
+
+    /*Columna layout*/
+    --columnasize: 400px;
+    --columnagap: 2em;
+}
+@media screen and (max-width: 1300px){
+    :root{
+        --tamaño-fuente: .6em;
+    }
+}
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
+a{
+    text-decoration-line: none;
+    color: black;
+}
+button{
+    border: none;
+}
+/*----------MAIN----------*/
+/*cafecito*/
+.cafecito{
+    font-size: var(--mainparrafos);
+    text-align: center;
+    padding: 1em;
+    padding-top: 0em;
+    margin-bottom: 1.5em;
+    color:black;
+
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+/*
+.cafecito:hover{
+    border: solid var(--rosa) .05em;
+}
+*/
+.cafecito-descripcion{
+    padding-bottom: 2em;
+}
+
+.cafecito-iconos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-self: center;
+    width: 50%;
+    
+}
+.fa-mug-saucer,
+.fa-bitcoin,
+.fa-paypal{
+    color: black;
+}
+footer{
+    background-color: var(--rosa);
+}
+footer a{
+    color:black;
+}

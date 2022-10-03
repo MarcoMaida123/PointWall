@@ -1,0 +1,99 @@
+/*-------GENERAL-------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root{
+    /*---Paleta de colores---*/
+    --rojo: hsl(353, 83%, 77%);
+    --naranja: hsl(26, 91%, 75%);
+    --amarillo: hsl(59, 78%, 77%);
+    --verde: hsl(82, 52%, 80%);
+    --azul: hsl(219, 52%, 83%);
+    --rosa: hsl(323, 50%, 81%);
+    --negrotransparente:hsla(0, 0%, 0%, 0.4);
+
+    /*---Fuentes---*/
+    --tamaño-fuente:1.25vh;
+    /*Header*/
+    --headertitulo:calc(var(--tamaño-fuente)*8);
+    --headerlink:calc(var(--tamaño-fuente)*2.25);
+    /*Main*/
+    --maintitulos:calc(var(--tamaño-fuente)*9);
+    --mainparrafos:calc(var(--tamaño-fuente)*2);
+    /*Footer*/
+    --footermediano:calc(var(--tamaño-fuente)*1.75);
+    --footermessi:calc(var(--tamaño-fuente)*1.25);
+
+    /*Valor animacion*/
+    --valoranimacion: 40;
+}
+@media screen and (max-width: 1300px){
+    :root{
+        --tamaño-fuente: .6em;
+    }
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration-line: none;
+    color: black;
+}
+
+/*-----------MAIN-----------*/
+h1{
+    margin: .5em 0;
+    padding: 0;
+    font-size: var(--maintitulos);
+}
+h3{
+    text-align: center;    
+}
+.presentacion{
+    text-align: center;
+}
+.mural{
+    height: auto;
+    width: 100%;    
+}
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 5em 5em 5em;
+    
+}
+.card{
+    width: 30%;
+    height: auto;
+    border: 3px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 15px;
+}
+.card img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 920px) {
+    .cards{
+        flex-direction: column;
+        align-items: center;
+        gap: 5em;
+    }
+    .card{
+        width: 80%;
+    }
+}
+/*-----------FOOTER-----------*/
+
+footer{
+    background-color: var(--amarillo);
+}

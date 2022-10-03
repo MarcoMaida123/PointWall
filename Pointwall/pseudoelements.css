@@ -1,0 +1,34 @@
+:root{
+    /*---Paleta de colores---*/
+    
+    --rojo: hsl(353, 83%, 77%);
+    --naranja: hsl(26, 91%, 75%);
+    --amarillo: hsl(59, 78%, 77%);
+    --verde: hsl(82, 52%, 80%);
+    --azul: hsl(219, 52%, 83%);
+    --rosa: hsl(323, 50%, 81%);
+    --gris:hsla(0, 0%, 50%, 1);
+}
+
+/*Scrollbar*/
+
+::-webkit-scrollbar{
+    width: 1.25em;
+    border: inherit solid 5px;
+    background-color: var(--gris);
+}
+::-webkit-scrollbar-track{
+    background-color: var(--gris);
+}
+::-webkit-scrollbar-thumb{
+    background-image: linear-gradient(200deg, var(--gris) calc(12.5%*1), var(--rojo) calc(12.5%*1), var(--rojo) calc(12.5%*2), var(--naranja) calc(12.5%*2), var(--naranja) calc(12.5%*3), var(--amarillo) calc(12.5%*3), var(--amarillo) calc(12.5%*4), var(--verde) calc(12.5%*4), var(--verde) calc(12.5%*5), var(--azul) calc(12.5%*5), var(--azul) calc(12.5%*6), var(--rosa) calc(12.5%*6), var(--rosa) calc(12.5%*7), var(--gris) calc(12.5%*7));
+    background-size: cover;
+    
+}
+
+/*Selection*/
+
+::selection{
+    background-color: black;
+    color: white;
+}

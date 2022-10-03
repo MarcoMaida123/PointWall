@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@usig-gcba/mapa-interactivo": "^1.2.5"
+  }
+}
